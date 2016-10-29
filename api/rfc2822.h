@@ -58,12 +58,12 @@ struct rfc2822_eoh_cb {
 };
 
 struct rfc2822_parser {
-	uint8_t					in_hdrs;	/* in headers */
+	char					in_hdrs;	/* in headers */
 
 	TAILQ_HEAD(hdr_cb, rfc2822_hdr_cb)		hdr_cb;
 	TAILQ_HEAD(hdr_miss_cb, rfc2822_hdr_miss_cb)	hdr_miss_cb;
 
-	uint8_t					in_hdr;		/* in specific header */
+	char					in_hdr;		/* in specific header */
 	struct rfc2822_header			header;
 
 	struct rfc2822_hdr_cb		        hdr_dflt_cb;
